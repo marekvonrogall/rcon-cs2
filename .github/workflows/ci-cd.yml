@@ -28,11 +28,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.PACKAGE_ACCESS_TOKEN }}
-
-      - name: Set up Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
           
       - name: Build Docker Image
         run: |
