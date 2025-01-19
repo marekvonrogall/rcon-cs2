@@ -6,7 +6,7 @@ COPY package*.json ./
 
 RUN npm install rcon-client express cors
 
-COPY src/rcon-service/server.js .
+COPY src/RCONService/server.js .
 
 EXPOSE 3000
 

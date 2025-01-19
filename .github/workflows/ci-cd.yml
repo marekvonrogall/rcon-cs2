@@ -29,22 +29,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.PACKAGE_ACCESS_TOKEN }}
 
-      - name: Set up Docker Compose
+      - name: Set up Docker
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker-compose
-          
-      - name: Set Timeout for Docker Push
-        run: |
-          export DOCKER_CLIENT_TIMEOUT=800
-          export COMPOSE_HTTP_TIMEOUT=800
+          sudo apt-get install -y docker.io
           
       - name: Build Docker Image
         run: |
-          docker-compose -f docker-compose-build.yml build
+          docker build -t rcon-service -f src/RCONService/Dockerfile .
 
       - name: Push Docker Image to GHCR
         run: |
-          docker-compose -f docker-compose-build.yml push
-          
+          docker tag rcon-service ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           
