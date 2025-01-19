@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/RCONService/**'
   pull_request:
     branches:
       - main
+    paths:
+      - 'src/RCONService/**'
   workflow_dispatch:
 
 env:
