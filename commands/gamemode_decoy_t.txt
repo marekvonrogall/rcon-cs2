@@ -1,0 +1,30 @@
+//GENERAL SETUP;
+mp_death_drop_gun 0;
+mp_buy_allow_guns 0;
+mp_buy_allow_grenades 0;
+mp_weapons_allow_zeus 0;
+sv_infinite_ammo 2;
+sv_hegrenade_damage_multiplier 0;
+
+//WEAPONS CT;
+mp_ct_default_melee weapon_knife;
+mp_ct_default_secondary weapon_glock;
+mp_ct_default_primary weapon_ak47;
+mp_ct_default_grenades 0;
+
+//WEAPONS T;
+mp_t_default_melee "";
+mp_t_default_secondary 0;
+mp_t_default_primary 0;
+mp_t_default_grenades weapon_decoy weapon_hegrenade;
+
+//PLAYER SETUP CT;
+mp_damage_scale_ct_head 9999;
+mp_damage_scale_ct_body 9999;
+
+//PLAYER SETUP T;
+mp_damage_scale_t_head 1;
+mp_damage_scale_t_body 1;
+
+say [DECOYS] T-SIDE!;
+mp_restartgame 1;

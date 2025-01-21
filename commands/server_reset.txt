@@ -1,0 +1,35 @@
+//GENERAL SETUP;
+sv_cheats 1;
+mp_death_drop_gun 1;
+mp_buy_allow_guns 1;
+mp_buy_allow_grenades 1;
+mp_weapons_allow_zeus 1;
+mp_taser_recharge_time 30;
+sv_infinite_ammo 0;
+sv_hegrenade_damage_multiplier 1;
+game_type 0;
+game_mode 0;
+mp_roundtime_defuse 1.920000;
+
+//WEAPONS CT;
+mp_ct_default_melee weapon_knife;
+mp_ct_default_secondary weapon_hkp2000;
+mp_ct_default_primary 0;
+mp_ct_default_grenades 0;
+
+//WEAPONS T;
+mp_t_default_melee weapon_knife;
+mp_t_default_secondary weapon_glock;
+mp_t_default_primary 0;
+mp_t_default_grenades 0;
+
+//PLAYER SETUP CT;
+mp_damage_scale_ct_head 1;
+mp_damage_scale_ct_body 1;
+
+//PLAYER SETUP T;
+mp_damage_scale_t_head 1;
+mp_damage_scale_t_body 1;
+
+say [SR] RESET!;
+mp_restartgame 1;

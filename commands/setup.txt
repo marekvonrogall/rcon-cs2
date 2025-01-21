@@ -1,0 +1,6 @@
+sv_cheats 1;
+mp_limitteams 0;
+mp_autoteambalance 0;
+mp_drop_knife_enable 1;
+mp_autokick 0;
+bot_kick;

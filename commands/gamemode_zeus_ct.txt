@@ -1,0 +1,19 @@
+//GENERAL SETUP;
+mp_death_drop_gun 0;
+mp_buy_allow_guns 0;
+mp_buy_allow_grenades 0;
+mp_weapons_allow_zeus 1;
+mp_taser_recharge_time 5;
+
+//WEAPONS CT;
+mp_ct_default_melee weapon_taser;
+mp_ct_default_secondary 0;
+mp_ct_default_primary 0;
+
+//WEAPONS T;
+mp_t_default_melee weapon_knife;
+mp_t_default_secondary weapon_glock;
+mp_t_default_primary weapon_ak47;
+
+say [ZEUS] CT-SIDE!;
+mp_restartgame 1;
