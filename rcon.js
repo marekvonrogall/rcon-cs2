@@ -10,13 +10,13 @@ function saveSetup() {
 function getServerDetails() {
   if (!ipPort || !password) {
     alert("Please fill in the IP:Port and Password!");
-    throw new Error("Missing server details.");
+    throw new Error("Missing server details.\n");
   }
 
   const [ip, port] = ipPort.split(":");
   if (!ip || !port) {
     alert("Invalid IP:Port format!");
-    throw new Error("Invalid IP:Port format.");
+    throw new Error("Invalid IP:Port format.\n");
   }
 
   return { ip, port, password };
@@ -54,7 +54,7 @@ function executeCommand(command) {
     })
     .catch((error) => {
       console.error("Error:", error);
-      return "Error: Unable to connect to the server";
+      return "Error: Unable to connect to the server\n";
     });
 }
 
