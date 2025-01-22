@@ -57,3 +57,7 @@ function executeCommand(command) {
       return "Error: Unable to connect to the server";
     });
 }
+
+function mapClicked(mapName) {
+  logOutput(`map ${mapName};`);
+}

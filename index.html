@@ -15,28 +15,37 @@
 
     <main id="content">
         <div id="commands" class="page">
-            <form id="group-element">
-                <h2>Setup</h2>
-                <label for="ip-port">IP:Port</label>
-                <input type="text" id="ip-port" name="ip-port" placeholder="Enter IP:Port">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password">
-                <button type="button" onclick="saveSetup()">Save</button>
-            </form>
-            
-            <section id="group-element">
-                <h2>Execute Command</h2>
-                <input type="text" id="command" placeholder="Enter command">
-                <button id="sendButton" onclick="logOutput(document.getElementById('command').value)">Send</button>
+            <section>
+                <h2>Maps</h2>
+                <div class="tile-container maps">
+                </div>
             </section>
+    
+            <div class="group-container">
+                <section id="execute-command" class="group-element">
+                    <h2>Execute Command</h2>
+                    <input type="text" id="command" placeholder="Enter command">
+                    <button id="sendButton" onclick="logOutput(document.getElementById('command').value)">Send</button>
+                </section>
+    
+                <form id="setup-tile" class="group-element">
+                    <h2>Setup</h2>
+                    <label for="ip-port">IP:Port</label>
+                    <input type="text" id="ip-port" name="ip-port" placeholder="Enter IP:Port">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password">
+                    <button type="button" onclick="saveSetup()">Save</button>
+                </form>
 
-            <section id="group-element">
-                <h2>Console Output</h2>
-                <textarea id="console-window" class="console-output" placeholder="console output..." readonly></textarea>
-            </section>
+                <section id="console-output" class="group-element">
+                    <h2>Console Output</h2>
+                    <textarea id="console-window" class="console-output" placeholder="console output..." readonly></textarea>
+                </section>
+            </div>
         </div>
     </main>
 
     <script src="rcon.js"></script>
+    <script src="rconUI.js"></script>
 </body>
 </html>
