@@ -22,17 +22,12 @@ function getServerDetails() {
   return { ip, port, password };
 }
 
-async function logOutput(command) {
+function logOutput(command, message) {
   const output = document.getElementById("console-window");
-  try {
-    const response = await executeCommand(command);
-    output.value += `> ${command}: ${response}`;
-  } catch (error) {
-    output.value += `> ${command}: Error: ${error.message}`;
-  }
+  output.value += `> ${command}: ${message}`;
 }
 
-function executeCommand(command) {
+async function executeCommand(command) {
   const { ip, port, password } = getServerDetails();
   const data = {
     host: ip,
@@ -41,23 +36,25 @@ function executeCommand(command) {
     command: command,
   };
 
-  return fetch("http://134.122.68.49/rcon", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      return data.response || "No output!\n";
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      return "Error: Unable to connect to the server\n";
+  try {
+    const response = await fetch("http://134.122.68.49/rcon", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
+
+    const result = await response.json();
+    logOutput(command, result.response || "No output!\n");
+    return result.response || "No output!\n";
+  } catch (error) {
+    console.error("Error:", error);
+    logOutput(command, `Error: Unable to connect to the server\n`);
+    throw new Error("Unable to connect to the server");
+  }
 }
 
 function mapClicked(mapName) {
-  logOutput(`map ${mapName};`);
+  executeCommand(`map ${mapName};`);
 }
