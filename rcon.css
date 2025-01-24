@@ -200,11 +200,11 @@ nav#menu {
 }
 
 #setup-tile {
-  flex: 1 1 calc(1.5em - 55px);
+  flex: 1 1 calc(50% - 55px);
   height: 262px;
 }
 
 #console-output {
   flex: 1 1 100%;
-  margin-top: -40px;
+  margin-top: -30px;
 }
