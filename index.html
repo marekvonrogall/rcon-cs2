@@ -14,7 +14,7 @@
     </header>
 
     <main id="content">
-        <div id="commands" class="page">
+        <div id="maps">
             <section>
                 <h2>Maps</h2>
                 <div class="tile-container maps">
@@ -42,6 +42,41 @@
                     <textarea id="console-window" class="console-output" placeholder="console output..." readonly></textarea>
                 </section>
             </div>
+        </div>
+        <div id="gamemodes">
+            <section>
+                <h2>Gamemodes</h2>
+                <div class="tile-container gamemodes">
+                    <div class="tile gamemode" data-action="zeus">
+                        <div class="background" style="background-image: url('./images/backgrounds/cs_general.png');"></div>
+                        <img class="foreground" src="./images/logos/zeus_ct.webp" alt="Zeus">
+                        <div class="hover-container">
+                            <div class="hover-section hover-left" data-action="zeusCT">
+                                <div class="hover-bg" style="background-image: url('./images/backgrounds/ct.jpg');"></div>
+                                <span class="hover-text">CT</span>
+                            </div>
+                            <div class="hover-section hover-right" data-action="zeusT">
+                                <div class="hover-bg" style="background-image: url('./images/backgrounds/t.jpg');"></div>
+                                <span class="hover-text">T</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile gamemode" data-action="decoy">
+                        <div class="background" style="background-image: url('./images/backgrounds/cs_general.png');"></div>
+                        <img class="foreground" src="./images/logos/decoy.png" alt="Decoy">
+                        <div class="hover-container">
+                            <div class="hover-section hover-left" data-action="decoyCT">
+                                <div class="hover-bg" style="background-image: url('./images/backgrounds/ct.jpg');"></div>
+                                <span class="hover-text">CT</span>
+                            </div>
+                            <div class="hover-section hover-right" data-action="decoyT">
+                                <div class="hover-bg" style="background-image: url('./images/backgrounds/t.jpg');"></div>
+                                <span class="hover-text">T</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 

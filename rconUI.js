@@ -30,6 +30,13 @@ function createTiles() {
         tile.onclick = () => mapClicked(map.name);
         container.appendChild(tile);
     });
+
+    document.querySelectorAll('.hover-section').forEach((section) => {
+        section.addEventListener('click', () => {
+            const action = section.getAttribute('data-action');
+            logOutput(`Clicked gamemode tile: ${action}`);
+        });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", createTiles);
