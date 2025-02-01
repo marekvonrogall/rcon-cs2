@@ -27,6 +27,24 @@ function logOutput(command, message) {
   output.value += `> ${command}: ${message}`;
 }
 
+async function executeFromFile(filename) {
+  try {
+    const response = await fetch(`./commands/${filename}.txt`);
+    if (response.ok) {
+      const data = await response.text();
+      const lines = data.split('\n').filter(line => line.trim() !== '');
+
+      for (const line of lines) {
+        await executeCommand(line);
+      }
+    } else {
+      console.log(`File ${filename} not found.`);
+    }
+  } catch (error) {
+    console.error(`Error fetching or processing the file: ${error.message}`);
+  }
+}
+
 async function executeCommand(command) {
   const { ip, port, password } = getServerDetails();
   const data = {

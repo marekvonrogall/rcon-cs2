@@ -34,7 +34,7 @@ function createTiles() {
     document.querySelectorAll('.hover-section').forEach((section) => {
         section.addEventListener('click', () => {
             const action = section.getAttribute('data-action');
-            logOutput(`Clicked gamemode tile: ${action}`);
+            executeFromFile(action);
         });
     });
 }
