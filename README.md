@@ -1,5 +1,9 @@
 # RCON CS2 Web Interface
 
+> [!note]
+> This project has been archived and the server shut down.
+> You can use [this image](ghcr.io/marekvonrogall/rcon-cs2:latest) to host your own server that executes RCON commands ([Usage](https://github.com/marekvonrogall/rcon-cs2/blob/5e84efce4012a5dd9e196cff17ce1dac623264b9/rcon.js#L48)).
+
 A web-based RCON (Remote Console) tool for Counter-Strike 2, enabling users to connect to a CS2 server using the Source RCON protocol. This tool allows execution of server commands and switching between different maps.
 
 ## Features
